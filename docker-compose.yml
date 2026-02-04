@@ -123,7 +123,7 @@ services:
     restart: unless-stopped
 
   splunkenterprise:
-    #build: .
+    build:
     hostname: splunk
     image: splunk/splunk:latest
     environment:
@@ -138,6 +138,7 @@ services:
       - "9997:9997"
       - "8088:8088"
       - "1514:1514"
+    restart: unless-stopped
 
 networks:
   elk:
